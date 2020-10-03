@@ -1,0 +1,46 @@
+version: "3.8"
+
+networks:
+  default:
+    name: local-redis-cluster
+
+services:
+  redis0:
+    image: mnadeem/redis
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9011:6379"
+    hostname: redis0
+    restart: always
+  redis1:
+    image: mnadeem/redis
+    ports:
+      - "9012:6379"
+    hostname: redis1
+    restart: always
+  redis2:
+    image: mnadeem/redis
+    ports:
+      - "9013:6379"
+    hostname: redis2
+    restart: always
+  redis3:
+    image: mnadeem/redis
+    ports:
+      - "9014:6379"
+    hostname: redis3
+    restart: always
+  redis4:
+    image: mnadeem/redis
+    ports:
+      - "9015:6379"
+    hostname: redis4
+    restart: always
+  redis5:
+    image: mnadeem/redis
+    ports:
+      - "9016:6379"
+    hostname: redis5
+    restart: always
